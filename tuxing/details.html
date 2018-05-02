@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./global1/iconfont.css">
+    <script src="globla.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div id="dt-header">
+    <span class="iconfont icon-fanhui"></span>
+    <span class="iconfont icon-fenxiang"></span>
+</div>
+<div id="dt-content">
+    <div id="dt-slide">
+        <img src="./img/details/dt-1.png" alt="">
+    </div>
+    <div id="dt-datails">
+        <div class="dt-datails-datails">
+            <span>土星儿童床单</span>
+            <span>严选材料</span>
+            <span>&yen;66.8</span>
+            <span class="dt-guige">规格数量选择</span>
+        </div>
+        <ol>
+            <li>所有商品免邮</li>
+            <li>24小时急速发货</li>
+            <li>14天无忧退款</li>
+        </ol>
+    </div>
+    <div id="dt-review">
+        <div class="dt-review-top">
+            <span>评价（226）</span>
+            <p>
+                查看全部
+                <span class="iconfont icon-you"></span>
+            </p>
+        </div>
+        <div class="dt-review-content">
+            <div class="dt-review-content-top">
+                <p>
+                    <img src="./img/details/dt-2.png" alt="">
+                    <span>德玛格格</span>
+                </p>
+                <span>2013-12-24</span>
+            </div>
+            <span>在土星教育儿童公开课中攒了我的评论</span>
+            <span>卡通床单  200cm x 180cm</span>
+        </div>
+    </div>
+    <div class="dt-shangla">
+        <span>上拉查看更多详情</span>
+        <span class="iconfont icon-shangchuan"></span>
+    </div>
+</div>
+<div id="dt-footer">
+    <div class="dt-footer-gouwuche">
+        <span class="iconfont icon-daohanggouwuche"></span>
+    </div>
+    <div class="dt-footer-goumai">
+        <span>立即购买</span>
+    </div>
+    <div class="dt-dt-footer-jiarugouwuche" style="background: red;color: white">
+        <span>加入购物车</span>
+    </div>
+</div>
+<div id="dt-menban">
+    <div class="dt-menban-details">
+        <div class="dt-menban-details-top">
+            <img src="./img/details/dt-3.png" alt="">
+            <div class="dt-menban-details-top-content">
+                <span>价格：&yen;66.8</span>
+                <span>已选择：卡通床单，200cm  x  180cm</span>
+            </div>
+            <span class="iconfont icon-guanbi dt-mengban"></span>
+        </div>
+        <div class="dt-menban-details-center">
+            <p>规格</p>
+            <p>
+                <span>卡通床单</span>
+                <span>海绵宝宝床单</span>
+            </p>
+        </div>
+        <div class="dt-menban-details-center">
+            <p>规格</p>
+            <p>
+                <span>卡通床单</span>
+                <span>海绵宝宝床单</span>
+            </p>
+        </div>
+        <div class="gl-menban-details-bottom">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+        </div>
+    </div>
+</div>
+<script>
+    var guige = document.querySelector('.dt-guige');
+    var gouwuche = document.querySelector('.dt-dt-footer-jiarugouwuche');
+    var menban = document.querySelector('#dt-menban');
+    var mengban = document.querySelector('.dt-mengban');
+    function bodyScroll(event) {
+        event.preventDefault();
+	}
+    mengban.ontouchs = function () {
+		menban.style.display = 'none';
+		document.body.removeEventListener('touchmove',bodyScroll,false);
+	}
+    guige.ontouchstart = function () {
+
+        guige.innerHTML = '卡通床单  200cm  x  180cm';
+	};
+	gouwuche.ontouchstart = function (e) {
+		menban.style.display = 'block';
+		document.body.addEventListener('touchmove',bodyScroll,false)
+	};
+</script>
+</body>
+</html>

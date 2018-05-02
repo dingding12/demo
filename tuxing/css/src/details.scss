@@ -1,0 +1,235 @@
+@import "globla";
+body,html{
+  background:#f5f5f5;
+}
+#dt-header{
+  width: 98%;
+  height: rem(80);
+  padding: 0 rem(10);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span{
+    font-size:rem(32);
+    width: rem(70);
+    height: rem(70);
+    text-align: center;
+    line-height: rem(75);
+    background:rgba(255,255,255,.5);
+    border-radius: 50%;
+  }
+}
+#dt-content{
+  margin-bottom:rem(100);
+}
+#dt-slide{
+  width: 100%;
+  img{
+    width: 100%;
+  }
+}
+#dt-datails{
+  width: rem(710);
+  height: rem(420);
+  padding: rem(15) rem(20);
+  //display: flex;
+  //flex-direction: column;
+  background: white;
+  .dt-datails-datails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid pink;
+    >span:nth-of-type(1){
+      font-size:rem(33);
+      font-weight: bold;
+    }
+    >span:nth-of-type(2){
+      font-size:rem(28);
+    }
+    >span:nth-of-type(3){
+      font-size:rem(33);
+      color: red;
+      margin: 35px 0;
+    }
+    >span:nth-of-type(4){
+      padding:rem(20) rem(50);
+      border: 1px solid black;
+      border-radius: 5px;
+      font-size: 24px;
+      text-align: center;
+      line-height:rem(80);
+      margin-bottom: 50px;
+    }
+  }
+  ol{
+    margin-left: rem(25);
+    height: rem(75);
+    display: flex;
+    justify-content: space-between;
+    line-height: rem(75);
+    li{
+      font-size: rem(24);
+      list-style: disc;
+    }
+  }
+}
+#dt-review{
+  margin: rem(15) 0;
+  background:white;
+  .dt-review-top{
+    width:100%;
+    height: rem(80);
+    line-height: rem(80);
+    align-items: center;
+    border-bottom: 1px solid pink;
+    font-size: rem(24);
+    >span{
+      float: left;
+      margin-left:rem(20);
+    }
+    >p{
+      float: right;
+      margin-right:rem(20);
+      >span{
+        font-size:rem(22);
+      }
+    }
+  }
+  .dt-review-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .dt-review-content-top{
+      padding:rem(20) rem(20) 0 rem(20);
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      >p{
+        img{
+          margin-right:rem(15);
+          vertical-align: middle;
+        }
+        span{
+          font-size: rem(26);
+          color:#999999;
+        }
+      }
+    }
+    >span{
+      margin-left: rem(100);
+    }
+    >span:nth-of-type(1){
+      font-size:rem(30);
+      font-weight: bold;
+      margin-top: rem(20);
+    }
+    >span:nth-of-type(2){
+      font-size:rem(26);
+      color:#999999;
+      margin-top: rem(20);
+      margin-bottom: rem(20);
+    }
+  }
+}
+#dt-footer{
+  width: 100%;
+  height: rem(100);
+  display: flex;
+  margin-top:rem(15);
+  font-size: rem(32);
+  border-top: 1px solid pink;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  .dt-footer-gouwuche{
+    width: rem(140);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid pink;
+    >span{
+      font-size:rem(50);
+    }
+  }
+  .dt-footer-goumai,.dt-dt-footer-jiarugouwuche{
+    border-right: 1px solid pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+  }
+}
+.dt-shangla{
+  width: 100%;
+  height: rem(200);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: rem(22);
+  >span{
+    font-size: rem(45);
+  }
+}
+#dt-menban{
+  width: 100%;
+  height:100%;
+  display: none;
+  position:absolute;
+  background: rgba(0,0,0,.5);
+  bottom:-160px;
+  .dt-menban-details{
+    margin-top: rem(680);
+    background: white;
+    padding:0 rem(25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .dt-menban-details-top{
+      display: flex;
+      justify-content: space-between;
+      font-size: rem(26);
+      margin: rem(20) 0;
+        img{
+          border: 1px solid pink;
+          width: rem(160);
+          height: rem(160);
+        }
+      .dt-menban-details-top-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        >span:nth-of-type(1){
+          color: red;
+        }
+      }
+      >span{
+        font-size: rem(32);
+      }
+    }
+    .dt-menban-details-center{
+      width:100%;
+      height: rem(110);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: rem(20) 0;
+      font-size: rem(30);
+      p:nth-of-type(2){
+
+      }
+      p:nth-of-type(2){
+        span{
+          padding: rem(15);
+          border: 1px solid pink;
+        }
+      }
+    }
+  }
+}

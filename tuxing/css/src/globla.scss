@@ -1,0 +1,75 @@
+@function rem ($px){
+  @return $px / 46.875 + rem
+}
+#header{
+  position: fixed;
+  top: 0;
+  width: rem(710);
+  padding:rem(10) rem(20);
+  height: rem(80);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  >span:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    font-size: rem(30);
+    .iconfont{
+      font-size: rem(30);
+    }
+  }
+  >span:nth-of-type(2){
+    font-size: rem(34);
+  }
+  >span:nth-of-type(3){
+    font-size: rem(30);
+  }
+}
+#footer{
+  background: white;
+  width: rem(710);
+  padding:rem(10) rem(20);
+  height: rem(80);
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid pink;
+  position: fixed;
+  bottom: 0;
+  .ft-content{
+    flex-grow: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: rem(20);
+    span:nth-of-type(1){
+      font-size: rem(40);
+    }
+
+  }
+}
+.gl-menban-details-bottom{
+  width:100%;
+  height: rem(110);
+  display: flex;
+  align-items: center;
+  margin: rem(20) 0;
+  font-size: rem(30);
+  button{
+    width: rem(75);
+    height: rem(60);
+    border: 1px solid pink;
+    background: white;
+    font-size: rem(22);
+  }
+  span{
+    width: rem(100);
+    height: rem(58);
+    border: 1px solid pink;
+    background: white;
+    font-size: rem(22);
+    text-align: center;
+    line-height: rem(58);
+  }
+}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./global1/iconfont.css">
+    <script src="globla.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>class</title>
+    <script>
+
+    </script>
+</head>
+<body>
+<div id="header">
+        <span>
+            <i class="iconfont icon-fanhui"></i>返回
+        </span>
+    <span>首页</span>
+    <span>
+            关闭
+        </span>
+</div>
+<div id="cl-content">
+    <div class="cl-nav">
+        <ul>
+            <li><span class="active">全球购</span></li>
+            <li><span>母婴</span></li>
+            <li><span>出行</span></li>
+            <li><span>厨房</span></li>
+            <li><span>饮食</span></li>
+            <li><span>服务</span></li>
+            <li> <span>居家</span></li>
+        </ul>
+    </div>
+    <div class="cl-warp">
+        <ul>
+            <li class="cl-slide">
+                <img src="./img/class/cl-1.png" alt="">
+            </li>
+            <li class="cl-slide">
+                <img src="./img/class/cl-2.png" alt="">
+            </li>
+            <li class="cl-slide">
+                <img src="./img/class/cl-3.png" alt="">
+            </li>
+            <li class="cl-slide">
+                <img src="./img/class/cl-4.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <div class="cl-title">
+         <span>母婴馆</span>
+        <span>严选材料，精心定制</span>
+    </div>
+    <div class="cl-details">
+        <div class="cl-details-content">
+            <img src="./img/class/cl-1.png" alt="">
+            <span>抱抱儿童乐园</span>
+            <span>&yen;168</span>
+        </div>
+        <div class="cl-details-content">
+            <img src="./img/class/cl-2.png" alt="">
+            <span>土星精选尿不湿</span>
+            <span>&yen;288</span>
+        </div>
+        <div class="cl-details-content">
+            <img src="./img/class/cl-4.png" alt="">
+            <span>土星精选尿不湿</span>
+            <span>&yen;288</span>
+        </div>
+        <div class="cl-details-content">
+            <div class="cl-details-button">
+                查看更多...
+            </div>
+        </div>
+    </div>
+    <div class="cl-title">
+        <span>保健馆</span>
+        <span>严选材料，精心定制</span>
+    </div>
+    <div class="cl-details">
+        <div class="cl-details-content">
+            <img src="./img/class/cl-6.png" alt="">
+            <span>抱抱儿童乐园</span>
+            <span>&yen;168</span>
+        </div>
+        <div class="cl-details-content">
+            <img src="./img/class/cl-5.png" alt="">
+            <span>土星精选尿不湿</span>
+            <span>&yen;288</span>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="ft-content">
+        <span class="iconfont icon-shouye"></span>
+        首页
+    </div>
+    <div class="ft-content">
+        <span class="iconfont icon-fenlei"></span>
+        分类
+    </div>
+    <div class="ft-content">
+        <span class="iconfont icon-daohanggouwuche"></span>
+        购物车
+    </div>
+    <div class="ft-content">
+        <span class="iconfont icon-gerenzhongxin"></span>
+        个人中心
+    </div>
+</div>
+<script>
+    var oul = document.querySelector('.cl-nav');
+    var ospan = document.querySelectorAll('.cl-nav>ul>li>span')
+    var slide = document.querySelectorAll('.cl-slide');
+    var setinUl = document.querySelector('.cl-warp>ul')
+    var index = 0;
+    setInterval(function () {
+		index++;
+		if(index>slide.length-1){
+			index = 0;
+        }
+		setinUl.style.marginLeft = -(slide[0].clientWidth * index)+'px';
+		console.log(index)
+	},3000);
+
+	setinUl.ontouchstart = (e)=>{
+		e = e ||event;
+		let start = e.changedTouches[0].clientX;
+		console.log(start)
+		setinUl.ontouchend = (e) =>{
+			let end = e.changedTouches[0].clientX;
+			console.log(end)
+			if(start > end){
+				index++;
+				if(index>slide.length-1){
+					index = 0;
+				}
+				setinUl.style.marginLeft = -(slide[0].clientWidth * index)+'px';
+			}else if(end > start){
+				index--;
+				if(index<0){
+					index = slide.length-1;
+				}
+				setinUl.style.marginLeft = -(slide[0].clientWidth * index)+'px';
+			}
+		}
+	};
+
+    for (let i=0;i<ospan.length;i++){
+		ospan[i].ontouchstart = () =>{
+			for (let j=0;j<ospan.length;j++){
+				ospan[j].className = '';
+			}
+			ospan[i].className = 'active';
+		}
+    }
+
+</script>
+</body>
+</html>

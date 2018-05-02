@@ -1,0 +1,97 @@
+@import "globla";
+#cl-content{
+  width: rem(750);
+  margin: rem(100) 0;
+  background:#f5f5f5;
+  .cl-nav{
+    width: rem(750);
+    overflow: auto;
+    height: rem(80);
+    display: flex;
+    ul{
+      display: flex;
+      li{
+        width: rem(200);
+        font-size: rem(24);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+          padding:rem(18) 0;
+        }
+        //span:hover{
+        //  color: red;
+        //  font-size: rem(30);
+        //  border-bottom: 2px solid red;
+        //}
+      }
+    }
+  }
+  .cl-warp{
+    width: 100%;
+    height: rem(240);
+    display: flex;
+    overflow: hidden;
+    ul{
+      display: flex;
+      li{
+        width: rem(750);
+        height: rem(240);
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+  .cl-title{
+    width: 100%;
+    height: rem(110);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    >span:nth-of-type(1){
+      font-size: rem(30);
+      font-weight: bold;
+    }
+    >span:nth-of-type(1){
+      font-size: rem(30);
+    }
+  }
+  .cl-details{
+    display: flex;
+    flex-wrap: wrap;
+    .cl-details-content{
+      margin:rem(5) 0 rem(5) rem(10);
+      width: rem(360);
+      height: rem(450);
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      font-size: rem(26);
+      >span:nth-of-type(1){
+        color: #666666;
+      }
+      span{
+        color: red;
+      }
+      img{
+        width: 100%;
+      }
+      .cl-details-button{
+        width: rem(240);
+        height: rem(80);
+        text-align: center;
+        line-height: rem(80);
+        border: 1px solid black;
+      }
+    }
+  }
+}
+.active{
+  color: red;
+  font-size: rem(30);
+  border-bottom: 2px solid red;
+}

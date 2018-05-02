@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./global1/iconfont.css">
+    <script src="globla.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div id="sp-header">
+    <span class="iconfont icon-fanhui"></span>
+    <span>购物车</span>
+    <span></span>
+</div>
+<div id="sp-content">
+    <ol>
+        <li>所有商品免邮</li>
+        <li>24小时急速发货</li>
+        <li>14天无忧退款</li>
+    </ol>
+    <div class="sp-content-details">
+        <div class="sp-content-details-title">
+            <label for="">
+                <input type="checkbox">
+                萌宝宝家具旗舰店
+            </label>
+        </div>
+        <div class="sp-content-details-content">
+            <label>
+                <input type="checkbox">
+                <img src="./img/shopping/sp-1.png" alt="">
+                <div class="sp-content-details-content-con">
+                    <span>土星儿童床单</span>
+                    <span style="color:#999999;">卡通床单  200cm  x  180cm</span>
+                    <div>
+                        <span style="color:red;">&yen;298.00</span>
+                        <div class="gl-menban-details-bottom">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-shanchu">
+                    <span class="iconfont icon-shanchu"></span>
+                </div>
+            </label>
+            <label>
+                <input type="checkbox">
+                <img src="./img/shopping/sp-1.png" alt="">
+                <div class="sp-content-details-content-con">
+                    <span>土星儿童床单</span>
+                    <span style="color:#999999;">卡通床单  200cm  x  180cm</span>
+                    <div>
+                        <span style="color:red;">&yen;298.00</span>
+                        <div class="gl-menban-details-bottom">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-shanchu">
+                    <span class="iconfont icon-shanchu"></span>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="sp-content-details">
+        <div class="sp-content-details-title">
+            <label for="">
+                <input type="checkbox">
+                萌宝宝家具旗舰店
+            </label>
+        </div>
+        <div class="sp-content-details-content">
+            <label>
+                <input type="checkbox">
+                <img src="./img/shopping/sp-1.png" alt="">
+                <div class="sp-content-details-content-con">
+                    <span>土星儿童床单</span>
+                    <span style="color:#999999;">卡通床单  200cm  x  180cm</span>
+                    <div>
+                        <span style="color:red;">&yen;298.00</span>
+                        <div class="gl-menban-details-bottom">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-shanchu">
+                    <span class="iconfont icon-shanchu"></span>
+                </div>
+            </label>
+        </div>
+
+    </div>
+</div>
+<div id="sp-jiesuan">
+    <div class="sp-jiesuan-left">
+        <input type="checkbox">
+        <span>全选（3）</span>
+    </div>
+    <div class="sp-jiesuan-right">
+        <span>总计</span>
+        <span>&yen;998.00</span>
+        <span>结算</span>
+    </div>
+</div>
+<div id="footer">
+    <div class="ft-content">
+        <span class="iconfont icon-shouye"></span>
+        首页
+    </div>
+    <div class="ft-content">
+        <span class="iconfont icon-fenlei"></span>
+        分类
+    </div>
+    <div class="ft-content">
+        <span class="iconfont icon-daohanggouwuche"></span>
+        购物车
+    </div>
+    <div class="ft-content">
+        <span class="iconfont icon-gerenzhongxin"></span>
+        个人中心
+    </div>
+</div>
+<script>
+    var label = document.querySelectorAll('.sp-content-details-content>label');
+    var sc = document.querySelector('.sp-shanchu');
+    for(let i=0;i<label.length;i++){
+    	label[i].ontouchstart = (e)=>{
+			for(let j=0;j<label.length;j++){
+				label[j].style.marginLeft = 0
+			}
+    		e = e || event;
+    		let start = e.changedTouches[0].clientX;
+            window.ontouchend = (e)=>{
+				let end = e.changedTouches[0].clientX;
+				if(start>end){
+					label[i].style.marginLeft = -sc.offsetWidth +'px'
+                }
+				if(start<end){
+					label[i].style.marginLeft = 0
+				}
+            }
+        }
+    }
+</script>
+</body>
+</html>

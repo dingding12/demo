@@ -1,0 +1,148 @@
+@import "globla";
+#sp-header{
+  position: fixed;
+  top: 0;
+  width: rem(710);
+  padding:rem(10) rem(20);
+  height: rem(80);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  font-size: rem(32);
+  span:nth-of-type(1){
+    font-size: rem(36);
+  }
+}
+#sp-content{
+  width: rem(750);
+  overflow: hidden;
+  margin: rem(100) 0 rem(250) 0;
+  border-top: 1px solid pink;
+  ol{
+    width: rem(650);
+    height: rem(60);
+    margin-left: rem(50);
+    display: flex;
+    justify-content: space-between;
+    line-height: rem(75);
+    li{
+      font-size: rem(24);
+      list-style: disc;
+    }
+  }
+  .sp-content-details{
+    margin-bottom:rem(25);
+    background: white;
+    .sp-content-details-title{
+      width: rem(750);
+      height: rem(70);
+      display: flex;
+      align-items: center;
+      border-bottom:1px solid pink;
+      label{
+        display: flex;
+        align-items: center;
+        input{
+          width: rem(40);
+          height: rem(40);
+          border-radius: 50%;
+          margin: 0 rem(20);
+        }
+      }
+    }
+
+    .sp-content-details-content{
+      margin-bottom:rem(25);
+      border-bottom: 1px solid pink;
+      label{
+        width: rem(710);
+        position: relative;
+        padding: rem(20);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid pink;
+        input{
+          width: rem(40);
+          height: rem(40);
+          border-radius: 50%;
+        }
+        img{
+          width: rem(180);
+          height: rem(180);
+          border: 1px solid pink;
+        }
+        .sp-content-details-content-con{
+          width: rem(440);
+          height: rem(180);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: rem(26);
+          >div{
+            margin-top: rem(40);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .gl-menban-details-bottom{
+              margin: 0;
+              padding: 0;
+              width: rem(260);
+              height: 100%;
+            }
+          }
+        }
+        .sp-shanchu{
+          width: rem(140);
+          height: rem(225);
+          background: red;
+          color: white;
+          position: absolute;
+          right: - rem(140);
+        }
+      }
+    }
+  }
+}
+#sp-jiesuan{
+  width: rem(750);
+  height: rem(100);
+  position: fixed;
+  bottom: rem(100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  .sp-jiesuan-left{
+    display: flex;
+    align-items: center;
+    font-size: rem(26);
+    input{
+      width: rem(40);
+      height: rem(40);
+      border-radius: 50%;
+      margin: 0 rem(20);
+    }
+  }
+  .sp-jiesuan-right{
+    width: rem(420);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:rem(26);
+    >span:nth-of-type(2) {
+      font-size: rem(30);
+      color: red;
+    }
+    >span:nth-of-type(3){
+      width: rem(180);
+      height: rem(100);
+      text-align: center;
+      line-height: rem(100);
+      background: red;
+      color: white;
+      font-size: rem(26);
+    }
+  }
+}
