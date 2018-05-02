@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="name">
+    {{aaa}}
+</h1>
+<script>
+
+    function self(data,el,exp) {
+        this.data = data;
+		observe(data);
+		el.innerHTML = this.data[exp];
+		new Watcher(this,exp, function (value) {
+			console.log(this)
+			console.log(exp)
+            el.innerHTML = value
+		})
+        return this
+	}
+
+	var ele = document.querySelector('#name')
+    var sss = new self({
+        name:'你好'
+    },ele,'name')
+    console.log(sss)
+	window.setTimeout(function () {
+		console.log('name值改变了');
+		sss.data.name = 'canfoo';
+	}, 2000);
+
+
+
+
+//创建Object.finedpropery()
+
+    function Observer(data,key,val) {
+    	observe(val);
+        var dep = new Dep();
+        Object.defineProperty(data, key, {
+        	get: function () {
+        		if(Dep.target) {
+        			dep.addSub(Dep.target);
+                }
+                return val;
+			},
+            set: function (newVal) {
+                console.log(val + '=>' + newVal);
+                val = newVal;
+			}
+        })
+	}
+
+    //一个函数 遍历data里面所有的属性
+    function observe(data) {
+    	if(!data || typeof data !== 'object'){//判断data是不是一个对象
+    		return;
+        }
+        //如果是对象就遍历他 然后劫持每一个属性
+        Object.keys(data).forEach(function (key) {
+			// 对应上面三个参数 第一个是对象
+            // 第二个是需要定义的或者修改属性的名字
+            // 第三个是目标属性拥有的特性
+        	Observer(data,key,data[key]);
+		})
+    }
+
+    function Dep() {
+        this.arr = []
+	}
+	Dep.prototype = {
+    	addSub: function (sub) {
+            this.arr.push(sub)
+		},
+        notify: function () {
+            this.arr.forEach(function (key) {
+                sub.update()
+			})
+		}
+    }
+
+
+	function Watcher(vm, exp, cb) {
+		this.cb = cb;
+		this.vm = vm;
+		this.exp = exp;
+		this.value = this.get();  // 将自己添加到订阅器的操作
+	}
+
+	Watcher.prototype = {
+		update: function() {
+			this.run();
+		},
+		run: function() {
+			var value = this.vm.data[this.exp];
+			var oldVal = this.value;
+			if (value !== oldVal) {
+				this.value = value;
+				this.cb.call(this.vm, value, oldVal);
+			}
+		},
+		get: function() {
+			Dep.target = this;  // 缓存自己
+			var value = this.vm.data[this.exp]  // 强制执行监听器里的get函数
+			Dep.target = null;  // 释放自己
+			return value;
+		}
+	};
+</script>
+</body>
+</html>

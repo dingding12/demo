@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7569e485-9627-4928-b58d-9f6561f6c36f" name="Locolhost" url="http://192.168.43.235:8080">
+        <fileTransfer port="0" mountedRoot="$PROJECT_DIR$/tuxing" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
